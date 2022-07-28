@@ -1,4 +1,4 @@
-import { AbstractBankAccount, ForiegnAccount, ForiegnInvestmentAccount, IBankAccount, LocalAccount, LocalInvestmentAccount } from "./bank-account"
+import { AbstractBankAccount, ForeignAccount, ForeignInvestmentAccount, LocalAccount, LocalInvestmentAccount } from "./bank-account"
 
 export abstract class BankAccountFactory {
 
@@ -28,9 +28,9 @@ export class ForiegnBankAccountFactory extends BankAccountFactory {
     create(accountName:string, type: string): AbstractBankAccount {
         let bankAccount: AbstractBankAccount
         if (type === 'investment') {
-            bankAccount = new ForiegnInvestmentAccount(accountName)
+            bankAccount = new ForeignInvestmentAccount(accountName)
         } else if (type === 'simple') {
-            bankAccount = new ForiegnAccount(accountName)
+            bankAccount = new ForeignAccount(accountName)
         } else {
             throw new Error('No bank account available')
         }

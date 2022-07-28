@@ -50,7 +50,7 @@ export class LocalInvestmentAccount extends AbstractBankAccount implements IInve
 
 }
 
-export class ForiegnInvestmentAccount extends AbstractBankAccount implements IInvestmentBankAccount {
+export class ForeignInvestmentAccount extends AbstractBankAccount implements IInvestmentBankAccount {
 
     constructor(accountName: string, private _profitFactor: number= 1) {
         super(accountName)
@@ -63,15 +63,15 @@ export class ForiegnInvestmentAccount extends AbstractBankAccount implements IIn
         this.charge = amount
     }
 
-    setProfitFactor(proficFactor: number) {
-        this._profitFactor = proficFactor
+    setProfitFactor(profitFactor: number) {
+        this._profitFactor = profitFactor
     }
     getProfitFactor(): number {
         return this._profitFactor
     }
     printAccount(): string {
         let message: string = super.printAccount()
-        return `${message} and Account Type is: ForiegnInvestmentAccount`
+        return `${message} and Account Type is: ForeignInvestmentAccount`
     }
 }
 
@@ -91,7 +91,7 @@ export class LocalAccount extends AbstractBankAccount implements IBankAccount {
     }
 }
 
-export class ForiegnAccount extends AbstractBankAccount implements IBankAccount {
+export class ForeignAccount extends AbstractBankAccount implements IBankAccount {
     constructor(accountName: string, private _currency: string= 'usd') {
         super(accountName)
     }
@@ -102,7 +102,7 @@ export class ForiegnAccount extends AbstractBankAccount implements IBankAccount 
 
     printAccount(): string {
         let message: string = super.printAccount()
-        return `${message} and Account Type is: ForiegnAccount`
+        return `${message} and Account Type is: ForeignAccount`
     }
 }
 
